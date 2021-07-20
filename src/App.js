@@ -85,9 +85,22 @@ const App = () => {
     },
   ]);
 
+  const updateScore = () => {
+    setCurrentScore(currentScore + 1);
+    if (bestScore <= currentScore) {
+      setBestScore(bestScore + 1);
+    }
+  };
+
   const changeStatus = (i) => {
     const updateImages = [...images];
-    updateImages[i].alreadyClicked = true;
+    if (updateImages[i].alreadyClicked === false) {
+      updateImages[i].alreadyClicked = true;
+      updateScore();
+    } else {
+      setCurrentScore(0);
+      alert("You lost");
+    }
     setImages(updateImages);
   };
 
