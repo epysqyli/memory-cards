@@ -92,6 +92,14 @@ const App = () => {
     }
   };
 
+  const resetClickState = () => {
+    let resetImages = [...images];
+    resetImages.map((image) => {
+      return (image.alreadyClicked = false);
+    });
+    setImages(resetImages);
+  };
+
   const changeStatus = (i) => {
     const updateImages = [...images];
     if (updateImages[i].alreadyClicked === false) {
@@ -99,6 +107,7 @@ const App = () => {
       updateScore();
     } else {
       setCurrentScore(0);
+      resetClickState();
       alert("You lost");
     }
     setImages(updateImages);
