@@ -1,11 +1,12 @@
 .scorecard {
   height: 10vh;
-  padding: 0 2vw;
+  padding: 0 7vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(95, 158, 160);
   box-shadow: 0 0 4px 2px cadetblue;
+  color: white;
 }
 
 .scores {
@@ -13,6 +14,7 @@
   justify-content: space-around;
   align-items: center;
   gap: 4vw;
+  font-size: 1.5rem;
 }
 
 .logo {
