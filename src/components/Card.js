@@ -9,6 +9,7 @@ const Card = (props) => {
         alt={props.imageAlt}
         onClick={props.onCardClicked}
       ></img>
+      <div className="animation-trigger"></div>
     </div>
   );
 };
