@@ -60,6 +60,14 @@ const App = () => {
       path: require("./assets/13.jpg").default,
       alt: "Chon",
     },
+    {
+      path: require("./assets/14.jpg").default,
+      alt: "Man Steals The Stars",
+    },
+    {
+      path: require("./assets/15.jpg").default,
+      alt: "Jassbusters",
+    },
   ]);
 
   return (
