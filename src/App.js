@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ScoreCard from "./components/ScoreCard";
+import Card from "./components/Card";
 
 import "./styles/App.scss";
 
@@ -64,6 +65,11 @@ const App = () => {
   return (
     <div>
       <ScoreCard currentScore={currentScore} bestScore={bestScore} />
+      <div className="container">
+        {images.map((image) => {
+          return <Card imagePath={image.path} alt={image.alt} />;
+        })}
+      </div>
     </div>
   );
 };
