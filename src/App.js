@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ScoreCard from "./components/ScoreCard";
 import Card from "./components/Card";
 
@@ -105,6 +105,7 @@ const App = () => {
     if (updateImages[i].alreadyClicked === false) {
       updateImages[i].alreadyClicked = true;
       updateScore();
+      updateRandomize();
     } else {
       setCurrentScore(0);
       resetClickState();
@@ -112,6 +113,23 @@ const App = () => {
     }
     setImages(updateImages);
   };
+
+  const randomize = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  };
+
+  const updateRandomize = () => {
+    const imagesToBeShuffled = [...images];
+    randomize(imagesToBeShuffled);
+    setImages(imagesToBeShuffled);
+  };
+
+  useEffect(() => {
+    updateRandomize();
+  }, [currentScore]);
 
   return (
     <div>
