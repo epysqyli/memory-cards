@@ -86,7 +86,10 @@ const App = () => {
   ]);
 
   const changeStatus = (i) => {
+    const updateImages = [...images, (images[i].alreadyClicked = true)];
+    setImages(updateImages);
     console.log(images[i]);
+    console.log(images);
   };
 
   return (
