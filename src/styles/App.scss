@@ -5,8 +5,13 @@
 }
 
 .container {
+  width: 90%;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 2vw;
+  row-gap: 2vh;
+  padding: 5vh 1vw 1vh;
 }
