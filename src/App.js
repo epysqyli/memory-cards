@@ -7,6 +7,7 @@ import "./styles/App.scss";
 const App = () => {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
   const [images, setImages] = useState([
     {
       path: require("./assets/1.jpg").default,
@@ -129,6 +130,9 @@ const App = () => {
 
   useEffect(() => {
     updateRandomize();
+    console.log("randomized");
+    setIsClicked(true);
+    console.log(isClicked);
   }, [currentScore]);
 
   return (
@@ -141,8 +145,11 @@ const App = () => {
               key={index}
               imagePath={image.path}
               alt={image.alt}
+              animationStatus={isClicked}
               onCardClicked={() => {
                 changeStatus(index);
+                setIsClicked(false);
+                console.log(isClicked);
               }}
             />
           );
