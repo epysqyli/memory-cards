@@ -1,9 +1,8 @@
 .scorecard {
-  height: 10vh;
-  padding: 0 7vw;
+  padding: 2vh 7vw;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: rgb(95, 158, 160);
   box-shadow: 0 0 4px 2px cadetblue;
   color: white;
@@ -16,6 +15,15 @@
   gap: 4vw;
   font-size: 1.5rem;
   text-transform: uppercase;
+}
+
+.current-score,
+.best-score {
+  div {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1vh;
+  }
 }
 
 .logo {
