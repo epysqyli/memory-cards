@@ -112,7 +112,6 @@ const App = () => {
       setCurrentScore(0);
       resetClickState();
       setLost(true);
-      // alert("You lost");
     }
     setImages(updateImages);
   };
@@ -155,8 +154,8 @@ const App = () => {
           );
         })}
       </div>
-      <div className={lost ? "popup" : "popup hidden"}>
-        <p>Your memory could be better</p>
+      <div className={lost ? "popup popup-animation" : "popup hidden"}>
+        <p>nice try !</p>
         <div className="btn" onClick={() => setLost(false)}>
           Keep playing
         </div>
