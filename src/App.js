@@ -155,7 +155,12 @@ const App = () => {
           );
         })}
       </div>
-      <div className={lost ? "popup" : "popup hidden"}></div>
+      <div className={lost ? "popup" : "popup hidden"}>
+        <p>Your memory could be better</p>
+        <div className="btn" onClick={() => setLost(false)}>
+          Keep playing
+        </div>
+      </div>
     </div>
   );
 };
