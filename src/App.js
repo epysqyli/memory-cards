@@ -8,6 +8,7 @@ const App = () => {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
+  const [lost, setLost] = useState(false);
   const [images, setImages] = useState([
     {
       path: require("./assets/1.jpg").default,
@@ -110,7 +111,8 @@ const App = () => {
     } else {
       setCurrentScore(0);
       resetClickState();
-      alert("You lost");
+      setLost(true);
+      // alert("You lost");
     }
     setImages(updateImages);
   };
@@ -136,13 +138,14 @@ const App = () => {
   return (
     <div>
       <ScoreCard currentScore={currentScore} bestScore={bestScore} />
-      <div className="container">
+      <div className={lost ? "container opaque" : "container"}>
         {images.map((image, index) => {
           return (
             <Card
               key={index}
               imagePath={image.path}
               alt={image.alt}
+              gameOver={lost}
               animationStatus={isClicked}
               onCardClicked={() => {
                 changeStatus(index);
@@ -152,6 +155,7 @@ const App = () => {
           );
         })}
       </div>
+      <div className={lost ? "popup" : "popup hidden"}></div>
     </div>
   );
 };
