@@ -24,7 +24,7 @@
   border-radius: 10px;
   opacity: 0;
   z-index: -1;
-  animation: confusion 300ms ease-out 1;
+  animation: confusion 750ms ease-out 1;
 }
 
 
@@ -34,8 +34,18 @@
     z-index: 1;
   }
 
+  25% {
+    opacity: 0.5;
+    z-index: 1;
+  }
+
   50% {
     opacity: 1;
+    z-index: 1;
+  }
+
+  75% {
+    opacity: 0.5;
     z-index: 1;
   }
 

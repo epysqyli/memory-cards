@@ -130,9 +130,7 @@ const App = () => {
 
   useEffect(() => {
     updateRandomize();
-    console.log("randomized");
     setIsClicked(true);
-    console.log(isClicked);
   }, [currentScore]);
 
   return (
@@ -149,7 +147,6 @@ const App = () => {
               onCardClicked={() => {
                 changeStatus(index);
                 setIsClicked(false);
-                console.log(isClicked);
               }}
             />
           );
